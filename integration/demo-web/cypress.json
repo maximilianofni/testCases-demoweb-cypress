@@ -1,0 +1,6 @@
+{
+  "baseUrl": "http://localhost:8080",
+  "screenshotsFolder": "tests/schreenshots",
+  "videosFolder": "tests/videos",
+  "projectId": "pp2k9x"
+}
