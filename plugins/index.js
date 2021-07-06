@@ -16,7 +16,14 @@
  * @type {Cypress.PluginConfig}
  */
 // eslint-disable-next-line no-unused-vars
-module.exports = (on, config) => {
+//module.exports = (on, config) => {
+//	const { commitInfo } = require('@cypress/commit-info');
+
+module.exports = on => {
+  on('file:preprocessor', file => {
+    commitInfo().then(console.log);
+  });
+};
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
-}
+//}

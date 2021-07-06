@@ -7,7 +7,7 @@ describe('cerrar sesion',function(){
     cy.get('#loginusername').type('maxiQA');
     cy.get('#loginpassword').type('maxiQA');
     cy.get('#logInModal > .modal-dialog > .modal-content > .modal-footer > .btn-primary').click();
-    cy.get('#nameofuser').should('contain','Welcome maxiQA');
+    cy.get('#nameofuser').should('contain','maxiQA');
     cy.get('[class="nav-link"]').eq(5).click();
   })
 })
