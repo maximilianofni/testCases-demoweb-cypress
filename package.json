@@ -6,7 +6,7 @@
 	"scripts": {
 		"co": "cypress open",
 		"dev": "http-server ./src -o",
-		"test": "cypress run --browser chrome 'cypress/integration/'",
+		"test": "cypress run --browser chrome 'cypress/integration/demo-web'",
 		"test:video": "cypress run 'cypress/integration/'"
 	},
 	"keywords": [],
