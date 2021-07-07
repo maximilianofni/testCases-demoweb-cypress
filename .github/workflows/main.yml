@@ -1,28 +1,23 @@
-name: Manually Triggered Cypress Tests with installation job
-
-on:
-  workflow_dispatch:
-    inputs:
-      baseUrl:
-        description: 'Testing Domain'
-        required: true
-        default: 'https://www.demoblaze.com/index.html'
-      title:
-        description: 'Merge Comment'
-        required: true
-        default: 'Running Cypress Tests'
-
+name: Cypress Tests
+on: [push]
 jobs:
   cypress-run:
-    runs-on: windows
+    name: cypress run
+    runs-on: chrome 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
-      # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
+        #nombre de la carpeta
+        uses: demoweb  
+        #nombre del proyecto en el dashboard
       - name: Cypress run
-        uses: cypress-io/github-action@v2
+        uses: cypress-io/github-Product Store
         with:
           record: true
-        env:
+          start: npm start
+         env:
+          #pass the dasboard
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          #id proyect
+          CYPRESS_ID_PROYECT: ${{ secrets.CYPRESS_ID_PROYECT }}
+          #TOKEN GITHUB
+          TOKENGITHUB: ${{ secrets.TOKENGITHUB }}
