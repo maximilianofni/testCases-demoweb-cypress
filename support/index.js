@@ -1,20 +1,28 @@
-// ***********************************************************
-// This example support/index.js is processed and
-// loaded automatically before your test files.
-//
-// This is a great place to put global configuration and
-// behavior that modifies Cypress.
-//
-// You can change the location of this file or turn off
-// automatically serving support files with the
-// 'supportFile' configuration option.
-//
-// You can read more here:
-// https://on.cypress.io/configuration
-// ***********************************************************
+module.exports.getExe = async (req, res) => {
+    try {
 
+        const file = getExeFilePath(req.params.filename)
+
+        if (!fs.existsSync(file.path)) {
+
+            res.status(200).json({ 'status': false, 'result': 'File not found!' })
+
+        } else {
+
+            res.setHeader('Content-disposition', 'attachment; filename=' + file.name);
+            //filename is the name which client will see. Don't put full path here.
+
+            res.setHeader('Content-type', file.type);
+
+            var sendFile = fs.createReadStream(file.path);
+
+            sendFile.pipe(res);
+        }
+    } catch (error) {
+        console.log(error)
+        res.status(200).json({ 'status': false, 'result': 'Failed!' });
+    }
+}
 // Import commands.js using ES2015 syntax:
 import './commands'
 
-// Alternatively you can use CommonJS syntax:
-// require('./commands')

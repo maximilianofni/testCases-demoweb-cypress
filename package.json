@@ -6,7 +6,7 @@
 	"scripts": {
 		"co": "cypress open",
 		"dev": "http-server ./src -o",
-		"test": "cypress run --browser chrome 'cypress/integration/demo-web'",
+		"test": "cypress run --browser chrome 'cypress/integration/demo-web/'",
 		"test:video": "cypress run 'cypress/integration/'"
 	},
 	"keywords": [],
@@ -15,5 +15,8 @@
 	"devDependencies": {
 		"cypress": "7.6.0",
 		"http-server": "0.12.3"
-	}
+	},
+	"extends": [
+    "plugin:cypress/recommended"
+  ]
 }

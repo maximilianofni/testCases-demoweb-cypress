@@ -1,6 +1,6 @@
 describe('Agregar al carrito una Laptop',function(){
   beforeEach(function(){
-    cy.log("ejecutando pre-condiciones")
+    cy.log("vericar si hay algun producto en el carrito")
     cy.visit('https://www.demoblaze.com/index.html')
     cy.get('[class="nav-link"]').eq(4).click();
     cy.get('#loginusername').type('maxiQA');
