@@ -1,0 +1,11 @@
+# testCases-demoweb-cypress
+test cases realizados en cypress
+
+PARA EJECUTAR PRUEBA  HAY QUE CREAR UNA CARPETA EN LA COMPUTADORA Y DESCARGARSE CYPRESS O EJECUTANDO POR CONSOLA EL SIGUIENTE COMANDO:
+
+npm install cypress --save-dev
+
+LUEGO DE LA INSTALACION SE DEBE ABRIR EJECUTANDO POR CONSOLA EL SIGUIENTE COMANDO:
+
+.\node_modules\.bin\cypress open
+
